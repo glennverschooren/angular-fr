@@ -1,24 +1,21 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true
+    "module": "commonjs", // export each file as a commonjs module
+    "emitDecoratorMetadata": true, // use annotations -> @component
+    "experimentalDecorators": true, // use annotations -> @component
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "outDir": "dist", // output folder
+    "declaration": true // triggers the generation of the typings *.d.ts files
   },
   "exclude": [
     "node_modules",
     "typings/main.d.ts",
     "typings/main"
   ],
-  "awesomeTypescriptLoaderOptions": {
-    "useCache": true,
-    "resolveGlobs": true,
-    "forkChecker": true,
-    "cacheDirectory": "node_modules/.awesome-typescript-loader-cache"
-  },
-  "filesGlob": [
-    "./src/**/*.ts",
-    "!./node_modules/**/*.ts"
+  "files": [
+    "src/index.ts"
   ]
 }
