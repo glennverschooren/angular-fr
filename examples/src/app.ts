@@ -9,12 +9,23 @@ import { FrFormComponent } from '../../index';
     selector: 'app',
     directives: [FrFormComponent],
     template: `<div>
-                   <fr-form></fr-form>
+                   <fr-form
+                        (onSubmit)="onSubmit(data)"
+                        (onNavigate)="onNaviagte()">
+                   </fr-form>
                </div>`
 })
 export class App {
     constructor() {
         console.log('Initialize app');
+    }
+    
+    onSubmit() {
+       console.log('onSumbit');
+    }
+    
+    onNavigate(data) {
+        console.log('onNavigate');
     }
 }
 
